@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Anek Bangla", sans-serif;
+}
+
+.nav {
+    height: 80px;
+    width: 100%;
+    background-color: #f0eded;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.flex {
+    display: flex;
+}
+
+.beet {
+    justify-content: space-between;
+}
+
+.around {
+    justify-content: space-around;
+}
+
+.logo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-image: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+}
+
+.medel {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  font-size: 1.2rem;
+  margin: 0 8px;
+  padding: 4px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: black;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+.btn {
+    outline: none;
+    background-color: #f0eded;
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+.icon-btn {
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: rgb(85, 85, 85);
+}
+.icon-btn:hover {
+  color: rgb(0, 0, 0); 
+  transform: scale(1.1); 
+  transition: all 0.2s ease-in-out;
+}
+.black-btn {
+    font-family: "Urbanist", sans-serif;
+    margin: 0 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px 32px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.black-btn:hover {
+    background-color: white;
+    color: black;
+}
+.nav-link{
+    font-family: "Urbanist", sans-serif;
+}
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .nav a {
+        margin: 8px 0;
+    }
+    .link-box{
+        display: none;
+    }
+}
