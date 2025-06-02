@@ -23,17 +23,23 @@ body {
     justify-content: space-between;
 }
 
-.around , .mbaround ,.mbulta {
+.around,
+.mbaround,
+.mbulta {
     justify-content: space-around;
 }
-.center{
+
+.center {
     justify-content: center;
 }
+
 .wrap {
     flex-wrap: wrap;
-    flex-direction: column;
-
 }
+.row{
+     flex-direction: column;
+}
+
 .logo {
     font-size: 2rem;
     text-transform: uppercase;
@@ -171,16 +177,12 @@ body {
 h1 {
     font-family: "Urbanist", sans-serif;
     font-size: 2rem;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
     margin: 0;
 }
 
 p {
     font-family: "Urbanist", sans-serif;
-    text-align: center;
-    color: #666;
+  
     margin: 10px 0;
 }
 
@@ -195,9 +197,70 @@ p {
     font-family: "Urbanist", sans-serif;
 
 }
+a{
+    text-decoration: none;
+}
+.fff{
+    color: #fff;
+    font-family: "Urbanist", sans-serif;
+}
+.card {
+    width: 250px;
+    background-color: #f0eded;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    height: auto;
+    transition: all 0.2s;
+}
 
+.card:hover {
+    box-shadow: rgba(0, 38, 255, 0.521) 0px 25px 50px -12px;
+}
 
+.card-img {
+    height: 300px;
+    width: 250px;
 
+}
+
+.card-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+
+.otc {
+    opacity: 0.4;
+}
+
+.cart-btn {
+    background-image: linear-gradient(to right, red, blue);
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    transition: background-image 0.3s ;
+    border-radius: 0 0 10px 10px;
+    font-family: "Urbanist", sans-serif;
+}
+
+.cart-btn:hover {
+    background-image: linear-gradient(to right, blue, red);
+}
+
+.footer {
+    background-color: #292929;
+    font-family: "Urbanist", sans-serif;
+    color: #ffffff;
+    height: auto;
+    width: 100%;
+}
 
 
 
@@ -211,6 +274,7 @@ p {
     .mbulta {
         flex-direction: column-reverse;
     }
+
     .underline {
         font-size: x-large;
     }
@@ -234,6 +298,7 @@ p {
     .link-box {
         display: none;
     }
+
     .mbaround {
         flex-direction: column;
         align-items: center;
