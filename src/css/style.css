@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
 }
 
-.around , .mbaround {
+.around , .mbaround ,.mbulta {
     justify-content: space-around;
 }
 .center{
