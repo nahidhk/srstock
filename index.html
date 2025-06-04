@@ -10,8 +10,13 @@
 </head>
 
 <body>
-    <div class="search">
-        
+    <div id="mysearch" class="search center flex vcc">
+        <input class="searchinput" type="search" placeholder="Search for products & brands">
+        <div class="search-btn flex center">
+            <button onclick="closepopup('mysearch')" class="black-btn margin">
+                <i class="fas fa-x"></i>
+            </button>
+        </div>
     </div>
     <nav class="nav">
         <div class="around flex medel">
@@ -27,7 +32,7 @@
             </div>
             <div>
                 <!-- Search Btn -->
-                <button class="icon-btn">
+                <button onclick="openpopup('mysearch')" class="icon-btn">
                     <i class="fas fa-search"></i>
                 </button>
                 <button class="icon-btn">
@@ -107,10 +112,12 @@
                     </a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-envelope"></i> &nbsp; <a class="fff" href="mailto:info@srstock.com">info@srstock.com</a>  
+                    <i class="fa-solid fa-envelope"></i> &nbsp; <a class="fff"
+                        href="mailto:info@srstock.com">info@srstock.com</a>
                 </p>
                 <p>
-                    <i class="fa-solid fa-location-dot"></i> &nbsp; <a class="fff" href="#">6601 Ataikula, Pabna, <br> &nbsp; &nbsp; &nbsp; &nbsp;Bangladesh</a>
+                    <i class="fa-solid fa-location-dot"></i> &nbsp; <a class="fff" href="#">6601 Ataikula, Pabna, <br>
+                        &nbsp; &nbsp; &nbsp; &nbsp;Bangladesh</a>
                 </p>
 
             </div>
