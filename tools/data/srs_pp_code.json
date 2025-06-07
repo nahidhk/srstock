@@ -1,6 +1,8 @@
 {
   "title":" Poplar Product",
-  "summary":"This is a offer price",
+  "summary":"This is a sample product description for a Poplar Product.This is a sample product description for a Poplar Product. It highlights the key features and benefits of the product, making it appealing to potential customers.",
   "btnName":"Shop Now",
-  "link":"/"
+  "link":"/",
+  "image":"exampule.png",
+  "imageAlt":"Poplar Product"
 }

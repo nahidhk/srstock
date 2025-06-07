@@ -210,7 +210,16 @@ body {
     width: 60%;
     height: 60%;
     object-fit: cover;
+    border-radius: 10px;
 
+}
+.summary{
+    font-family: "Urbanist", sans-serif;
+    color: #00000081;
+    padding: 10px;
+}
+.text-center {
+    text-align: center;
 }
 
 h1 {
@@ -303,13 +312,22 @@ a{
 .vcc{
     display: none;
 }
-
+.w50 ,.mw50 {
+    width: 50%;
+}
+.mw30{
+    width: 30%;
+}
 
 
 
 /* Mobile css */
 
 @media (max-width: 768px) {
+    .mw50 ,.mw30 {
+        width: 100%;
+    }
+
     .mbulta {
         flex-direction: column-reverse;
     }
