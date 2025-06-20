@@ -1,8 +1,12 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,29 +23,37 @@
         </div>
     </div>
     <!-- Navigation Bar -->
-    <?php include 'components/nav.asp'; ?>
+    <?php require_once '../components/nav.asp'; ?>
 
 
     <br><br><br>
 
 
 
-    <!-- carousel -->
-
-    <div class="carousel">
-        <div id="story" class="mbulta flex medel">
-
-        </div>
-    </div>
+    <!-- That is a point of interest -->
 
 
+<center>
+    <h1>
+        <?php 
+       $pid = $_GET['productId'] ?? 'Unknown Product';
+        
+        // Display the product ID
+       echo "Product ID: " . htmlspecialchars($pid);
+        
+        
+        ?>
+    </h1>
+</center>
 
 
 
-    <!-- shopping card -->
-     <?php include 'components/soping.asp'; ?>
 
-<!-- end soping card -->
+
+
+
+
+    <!-- code end -->
 
 
 
@@ -49,7 +61,7 @@
 
     <br><br>
     <!-- Footer  -->
-    <?php include 'components/footer.asp'; ?>
+    <?php include '../components/footer.asp'; ?>
     <!-- js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
 <script>
@@ -57,14 +69,23 @@
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "src/css/style.css?v=" + timestamp;
+  link.href = "/src/css/style.css?v=" + timestamp;
   document.head.appendChild(link);
 
   const script = document.createElement("script");
-  script.src = "src/js/main.js?v=" + timestamp;
+  script.src = "/src/js/main.js?v=" + timestamp;
   document.body.appendChild(script);
 </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+

@@ -37,3 +37,12 @@ fetch('/tools/data/srs_pp_code.json')
         document.getElementById("story").innerHTML = carasoleData;
     })
     .catch(error => console.error("Error loading data:", error));
+
+
+
+
+
+    function addToCart(productId) {
+        // Simulate adding to cart
+        window.location.href = `/cart/index.php?productId=${productId}`;
+    }

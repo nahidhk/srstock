@@ -1,0 +1,10 @@
+[
+ {
+    "name": "Panjabi",
+    "description": "Hello iam a web developer",
+    "price": "৳100.00",
+    "originalPrice": "৳100.00",
+    "image": "src/img/p.png",
+    "id": "1"
+}
+]
