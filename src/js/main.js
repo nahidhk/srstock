@@ -30,7 +30,7 @@ fetch('/tools/data/srs_pp_code.json')
      </div>
 
             <div class="flex medel around mw50">
-                <img class="feetImg" src="/src/img/${data.image}" alt="${data.imageAlt}" srcset="">
+                <img loading="lazy" class="feetImg" src="/src/img/${data.image}" alt="${data.imageAlt}" srcset="">
             </div>
 
    `
