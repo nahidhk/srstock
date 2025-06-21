@@ -371,16 +371,31 @@ a {
     color: #fff;
     font-family: "Urbanist", sans-serif;
 }
-.mvcc{
+
+.mvcc {
     display: block;
 }
-.icon-md{
+
+.icon-md {
     font-size: 1.5rem;
     color: #fff;
     margin: 0 5px;
 }
-/* Mobile css */
 
+/* Mobile css */
+.cart {
+    height: auto;
+    width: 80%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.showdwn{
+    box-shadow: 0 0 5px 0 #585858;
+    border-radius: 10px;
+}
 @media (max-width: 768px) {
 
     .mw50,

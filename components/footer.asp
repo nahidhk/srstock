@@ -7,7 +7,7 @@
             <!-- contentbox -->
             <div>
                 <span class="underline">
-                    <img height="30px" src="src/img/logo.png" alt=""> <span class="logo">sr STOCK</span>
+                    <img height="30px" src="/src/img/logo.png" alt=""> <span class="logo">sr STOCK</span>
                 </span>
                 <br>
                 <p>

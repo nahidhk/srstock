@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,28 +20,27 @@
     </div>
     <!-- Navigation Bar -->
     <?php require_once '../components/nav.asp'; ?>
-
-
     <br><br><br>
-
-
-
     <!-- That is a point of interest -->
 
 
-<center>
-    <h1>
-        <?php 
-       $pid = $_GET['productId'] ?? 'Unknown Product';
-        
-        // Display the product ID
-       echo "Product ID: " . htmlspecialchars($pid);
-        
-        
-        ?>
-    </h1>
-</center>
 
+
+
+
+
+    <section class="flex center">
+        <div class="cart">
+              <div class="flex around">
+                <div class="card-img showdwn">
+                    <img loading="lazy" src="/src/img/exampule.png" alt="">
+                </div>
+                <div>
+                    <h1>box2</h1>
+                </div>
+              </div>
+        </div>
+    </section>
 
 
 
@@ -54,11 +49,6 @@
 
 
     <!-- code end -->
-
-
-
-
-
     <br><br>
     <!-- Footer  -->
     <?php include '../components/footer.asp'; ?>
