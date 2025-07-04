@@ -65,21 +65,33 @@
     <!-- install your sorce code  !!!! Remove the code is a api php rename index.html > index.php-->
 
 
+    
 
 
+    <section class="flex center">
+        <!-- mySql button -->
+        <div class="min">
+           <img src="/admin/dash/svg/mysql.svg" alt="">
+           <strong>MySQL</strong>
+        </div>
+       <!-- **** mysql btn**** -->
 
+        <!-- ads button -->
+        <div class="min">
+           <img src="/admin/dash/svg/ads.svg" alt="">
+           <strong>Ad's</strong>
+        </div>
+       <!-- **** ads btn**** -->
 
+               <!-- ads button -->
+        <div class="min">
+           <img src="/admin/dash/svg/upload.svg" alt="">
+           <strong>Post</strong>
+        </div>
+       <!-- **** ads btn**** -->
 
-
-
-
-
-
-
-
-
-
-
+       
+    </section> 
 
     <!-- nosql -->
 
