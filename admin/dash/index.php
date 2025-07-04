@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/style.css?v=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAP Dashboard</title>
@@ -84,16 +84,39 @@
        <!-- **** ads btn**** -->
 
                <!-- ads button -->
-        <div class="min">
+        <div onclick="openpopup('postpopup')" class="min">
            <img src="/admin/dash/svg/upload.svg" alt="">
            <strong>Post</strong>
         </div>
-       <!-- **** ads btn**** -->
-
-       
+       <!-- **** ads btn**** --> 
     </section> 
 
+
+
+<!-- post popup --> 
+    <div  id="postpopup" class="darkbox vcc">
+        <div class="popup fill">
+            <div class="underline flex beet">
+              <div></div>
+              <div>Post</div>
+              <div onclick="closepopup('postpopup')" class="closeBtn"><i class="fa-solid fa-x"></i></div>
+            </div>
+            <?php include 'components/post.asp'; ?>
+        </div>
+    </div>
+
+
+
+
+
     <!-- nosql -->
+
+
+
+
+
+
+
 
     <!-- javascript -->
     <!-- font awesome js working -->
@@ -101,8 +124,8 @@
         integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- site js -->
-    <script src="/src/js/login.js"></script>
-    <script src="/src/js/main.js"></script>
+    <script src="/src/js/login.js?v=1.0"></script>
+    <script src="/src/js/main.js?v=1.0"></script>
 
 </body>
 

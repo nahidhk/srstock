@@ -20,7 +20,7 @@ let dBusername = "";
 let dBpassword = "";
 let dBtoken = "";
 
-// Load config.json
+// Load config.json 
 async function loadjson() {
     try {
         const response = await fetch('/config.json');

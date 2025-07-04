@@ -16,7 +16,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    animation: openpopup 0.3s;
 }
+@keyframes openpopup{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+} 
 
 .popup {
     background-color: white;
@@ -156,4 +166,73 @@ h1 {
     width: 68px;
     height: 68px;
     border-radius: 10px;
+}
+.beet{
+    justify-content: space-between;
+}
+.closeBtn{
+    color: #000000;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.4s;
+}
+.closeBtn:hover{
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+}
+.fill{
+    width: 90%;
+    height: 90%;
+}
+.removePopup{
+    animation: closepopup 0.3s 
+    ;
+}
+@keyframes closepopup {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+.upbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.upicon{
+   font-size: 50px;
+
+}
+.inputimgcolor{
+    width: 100px;
+    height: 40px;
+    border: 1px dotted #4680ff;
+    margin: 10px;
+    text-align: center;
+    outline: none;
+}
+.input {
+    width: 300px;
+    height: 30px;
+   border: 1px solid #4680ff;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: #4680ff;
+    margin: 5px;
+}
+.input:focus {
+   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
