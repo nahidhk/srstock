@@ -8,32 +8,25 @@
                 <div class="flex">
                     <label for="img1">
                         <div class="upbox">
-                            <i class="upicon fa-solid fa-plus"></i>
+                           <i class=" upicon fa-solid fa-cloud-arrow-up"></i>
                             <span class="uptxt">Add images 3*1</span>
                         </div>
                         <input class="inputimgcolor" type="text" name="img1color" placeholder="Image 3*1 Color"
                             required>
                     </label>
                     <input class="vcc" type="file" id="img1" name="img1" accept="image/*" required>
-                    <label for="img2">
-                        <div class="upbox">
-                            <i class="upicon fa-solid fa-plus"></i>
-                            <span class="uptxt">Add images 3*2</span>
+                   
+                <!-- add more button -->
+                <div class="upbox">
+                          <i class=" upicon fa-solid fa-plus"></i>
+                            <span class="uptxt">Add More img</span>
                         </div>
-                        <input class="inputimgcolor" type="text" name="img2color" placeholder="Image 3*2 Color"
-                            required>
-                    </label>
-                    <input class="vcc" type="file" id="img2" name="img2" accept="image/*" required>
-                    <label for="img3">
-                        <div class="upbox">
-                            <i class="upicon fa-solid fa-plus"></i>
-                            <span class="uptxt">Add images 3*3</span>
-                        </div>
-                        <input class="inputimgcolor" type="text" name="img3color" placeholder="Image 3*3 Color"
-                            required>
-                    </label>
-                    <input class="vcc" type="file" id="img3" name="img3" accept="image/*" required>
+                      
                 </div>
+
+
+                </div>
+
 
                 <div>
                     <strong>
