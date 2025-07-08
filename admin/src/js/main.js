@@ -4,11 +4,16 @@ function logouti(){
     window.location.reload();
 }
 
-
 function openpopup(loaddata){
-    document.getElementById(loaddata).style.display = "flex";
-    
+    const popup = document.getElementById(loaddata);
+    popup.classList.remove("removePopup");
+    popup.style.display = "flex";
 }
+
 function closepopup(loaddata){
-  document.getElementById(loaddata).classList.add("removePopup");
-}   
+    const popup = document.getElementById(loaddata);
+    popup.classList.add("removePopup");
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 300);
+}

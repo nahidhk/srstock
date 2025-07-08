@@ -6,6 +6,7 @@ body {
     font-family: "Schibsted Grotesk", sans-serif;
 }
 
+
 .darkbox {
     position: fixed;
     top: 0;
@@ -17,18 +18,31 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: openpopup 0.3s;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: ooio 0.2s ;
 }
-@keyframes openpopup{
-    from {
+@keyframes ooio {
+    0% {
         transform: scale(0);
+        opacity: 0;
     }
-    to {
+    100% {
         transform: scale(1);
+        opacity: 1;
     }
-} 
+    
+}
+.removePopup {
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+
 
 .popup {
+    overflow: scroll;
     background-color: white;
     border-radius: 8px;
     padding: 20px;
@@ -185,18 +199,7 @@ h1 {
     width: 90%;
     height: 90%;
 }
-.removePopup{
-    animation: closepopup 0.3s 
-    ;
-}
-@keyframes closepopup {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(0);
-    }
-}
+
 .upbox{
     display: flex;
     flex-direction: column;
@@ -224,7 +227,7 @@ h1 {
     outline: none;
 }
 .input {
-    width: 300px;
+    width: 95%;
     height: 30px;
    border: 1px solid #4680ff;
     outline: none;
@@ -236,3 +239,74 @@ h1 {
 .input:focus {
    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
+
+
+
+.size-selector-box {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sizes label {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.sizes input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.sizes input[type="checkbox"]:checked + span {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.sizes label:hover {
+    background-color: #e0e0e0;
+}
+
+.json-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.elementx{
+     max-width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.setfill{
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
