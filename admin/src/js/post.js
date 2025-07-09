@@ -21,12 +21,12 @@ function updatesize() {
 
 // add imge 
 
-   const uploadContainer = document.getElementById('uploadContainer');
-    const addMoreBtn = document.getElementById('addMoreBtn');
-    const photosInput = document.getElementById('photos');
+const uploadContainer = document.getElementById('uploadContainer');
+const addMoreBtn = document.getElementById('addMoreBtn');
+const photosInput = document.getElementById('photos');
 
-  
-    function createUploadPair(index) {
+
+function createUploadPair(index) {
     const div = document.createElement('div');
     div.classList.add('uploadPair');
     div.style.marginTop = "10px";
@@ -34,12 +34,12 @@ function updatesize() {
     const label = document.createElement('label');
     label.style.cursor = "pointer";
 
-   
+
     const upbox = document.createElement('div');
     upbox.classList.add('upbox');
     upbox.innerHTML = `<i class="upicon fa-solid fa-cloud-arrow-up"></i> <span class="uptxt">upload image</span>`;
 
-    
+
     const colorInput = document.createElement('input');
     colorInput.type = "text";
     colorInput.name = `img${index}color`;
@@ -47,7 +47,7 @@ function updatesize() {
     colorInput.required = true;
     colorInput.classList.add('inputimgcolor');
 
-   
+
     const fileInput = document.createElement('input');
     fileInput.type = "file";
     fileInput.accept = "image/*";
@@ -56,7 +56,7 @@ function updatesize() {
     fileInput.style.display = "none";
     fileInput.classList.add('fileinput');
 
-  
+
     fileInput.addEventListener('change', () => {
         if (fileInput.files.length > 0) {
             const file = fileInput.files[0];
@@ -69,10 +69,10 @@ function updatesize() {
             reader.readAsDataURL(file);
         }
 
-        updatePhotosInput(); 
+        updatePhotosInput();
     });
 
-   
+
     upbox.addEventListener('click', () => fileInput.click());
 
     label.appendChild(upbox);
@@ -84,36 +84,48 @@ function updatesize() {
 }
 
 
-   
-    let uploadCount = 1;
 
-   
-    addMoreBtn.addEventListener('click', () => {
-        uploadCount++;
-        const newUploadPair = createUploadPair(uploadCount);
-        uploadContainer.appendChild(newUploadPair);
+let uploadCount = 1;
+
+
+addMoreBtn.addEventListener('click', () => {
+    uploadCount++;
+    const newUploadPair = createUploadPair(uploadCount);
+    uploadContainer.appendChild(newUploadPair);
+});
+
+
+function updatePhotosInput() {
+    const pairs = uploadContainer.querySelectorAll('.uploadPair');
+    const photosArr = [];
+
+    pairs.forEach(pair => {
+        const colorInput = pair.querySelector('input[type="text"]');
+        const fileInput = pair.querySelector('input[type="file"]');
+
+        if (fileInput.files.length > 0 && colorInput.value.trim() !== '') {
+
+            photosArr.push({
+                photo: fileInput.files[0].name,
+                color: colorInput.value.trim()
+            });
+        }
     });
 
-    
-    function updatePhotosInput() {
-        const pairs = uploadContainer.querySelectorAll('.uploadPair');
-        const photosArr = [];
+    photosInput.value = JSON.stringify(photosArr);
+}
 
-        pairs.forEach(pair => {
-            const colorInput = pair.querySelector('input[type="text"]');
-            const fileInput = pair.querySelector('input[type="file"]');
 
-            if(fileInput.files.length > 0 && colorInput.value.trim() !== '') {
-            
-                photosArr.push({
-                    photo: fileInput.files[0].name,
-                    color: colorInput.value.trim()
-                });
-            }
-        });
+uploadContainer.addEventListener('change', updatePhotosInput);
 
-        photosInput.value = JSON.stringify(photosArr);
-    }
 
-   
-    uploadContainer.addEventListener('change', updatePhotosInput);
+
+function calculateDiscount() {
+    const price = document.getElementById("productprice").value;
+    const discount = document.getElementById("productdiscount").value;
+    const discountPrice = document.getElementById("productdiscountamount");
+    const discountAmount = price - (price * discount) / 100;
+    discountPrice.value = discountAmount;
+
+}
+

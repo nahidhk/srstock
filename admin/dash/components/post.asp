@@ -6,7 +6,7 @@
 
         <div class="elementx">
             <strong>Upload a Product image </strong>
-           
+
             <hr>
             <div class="flex setfill" id="uploadContainer">
 
@@ -15,7 +15,8 @@
                     <span class="uptxt">Add More img</span>
                 </div>
             </div>
-             <input class="input" name="photos" id="photos" type="text" />
+            <label class="json-label" for="photos">Uploaded Photos (JSON)</label>
+            <input readonly class="input" name="photos" id="photos" type="text" />
         </div>
 
 
@@ -50,11 +51,29 @@
             </div>
 
             <label for="size" class="json-label">Selected Sizes (JSON)</label>
-            <input readonly type="text" id="size" class="input" placeholder='{"size":[]}' />
+            <input readonly type="text" id="size" class="input" placeholder='' />
         </div>
 
+        <!-- The price listing -->
+        <div class="size-selector-box">
+            <strong>
+                Product Price and Discount
+            </strong>
+            <hr>
+            <div>
+                <label class="json-label" for="productprice">Product Price Ammount</label>
+                <input oninput="calculateDiscount()" class="input" type="number" name="productprice" id="productprice" placeholder="Product Price"
+                    required>
+                <br>
+                <label class="json-label" for="pricediscount">Product Discount %</label>
+                <input oninput="calculateDiscount()" class="input" type="number" name="productdiscount" id="productdiscount"
+                    placeholder="Product Discount" required>
+                <br>
+                <label class="json-label"   for="productdiscountamount">Product Discount Ammount</label>
+                <input readonly class="input" type="number" id="productdiscountamount" required>
+            </div>
 
-
+        </div>
 
     </form>
 </div>
