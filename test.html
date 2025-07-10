@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Image</title>
+</head>
+<body>
+  <button onclick="triggerUpload()">Upload Image</button>
+
+  <script>
+    function triggerUpload() {
+      // Input তৈরি করছি ID সহ
+      const fileInput = document.createElement('input');
+      fileInput.type = "file";
+      fileInput.accept = "image/*";
+      fileInput.id = "imgupload";
+      fileInput.style.display = "none";
+      document.body.appendChild(fileInput);
+
+      fileInput.addEventListener("change", function () {
+        const file = fileInput.files[0];
+
+        if (file) {
+          const formData = new FormData();
+          formData.append("imgupload", file); // input এর id="imgupload" এর ফাইল
+
+          fetch("upload/upload.php", {
+            method: "POST",
+            body: formData
+          })
+          .then(res => res.text())
+          .then(data => {
+            alert(data);
+          })
+          .catch(err => {
+            alert("Upload failed");
+            console.error(err);
+          });
+        }
+      });
+
+      // Auto-click to open file dialog
+      fileInput.click();
+    }
+  </script>
+</body>
+</html>
