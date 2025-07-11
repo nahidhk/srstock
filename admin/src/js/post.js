@@ -116,15 +116,18 @@ function updatesize() {
 
 // Price and discount calculation
 function calculateDiscount() {
-    const price = parseFloat(document.getElementById("productprice").value) || 0;
-    const discount = parseFloat(document.getElementById("productdiscount").value) || 0;
+    const price = parseFloat(document.getElementById("productprice").value) ;
+    const discount = parseFloat(document.getElementById("productdiscount").value) ;
     const discountPrice = document.getElementById("productdiscountamount");
 
     const discountAmount = price - (price * discount) / 100;
-    discountPrice.value = discountAmount.toFixed(2);
+    discountPrice.value = discountAmount;
 }
 
-// Ajax Upload function
+
+
+
+
 function uploadToPHP() {
     const form = document.getElementById('uploadForm');
     const formData = new FormData(form);
@@ -133,9 +136,22 @@ function uploadToPHP() {
         method: 'POST',
         body: formData
     })
- 
+    .then(res => res.json())
+    .then(data => {
+        if (data.type) {   
+            form.action = '/admin/dash/post.php';
+            form.method = 'POST';
+            form.submit();
+        } else {
+            alert("Upload failed:\n" + (data.errors ? data.errors.join("\n") : "Unknown error"));
+        }
+    })
+    .catch(err => {
+        alert("Upload error: " + err.message);
+    });
 }
 
+ 
 
 
 

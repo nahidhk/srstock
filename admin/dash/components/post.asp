@@ -1,4 +1,4 @@
-<form id="uploadForm" enctype="multipart/form-data" method="post">
+<form id="uploadForm" >
 
     <div class="elementx">
         <strong>Upload a Product image </strong>

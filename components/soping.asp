@@ -5,7 +5,7 @@
 
 
 <script>
-    fetch('/tools/data/api_ts_sr.json')
+    fetch('/tools/data/api_ts_sr.php')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('dataContainer');
@@ -18,12 +18,12 @@
         <!-- card -->
       
             <div class="card-img">
-                <img loading="lazy" src="/${item.image}" alt="${item.name}">
+                <img loading="lazy" src="/admin/dash/upload/uploads/${item.photos_json[0].photo}" alt="${item.name}">
             </div>
             <div class="padding-left">
                 <b>${item.name}</b> <br>
                 <span>${item.description}</span> <br>
-                <span>${item.price} &nbsp;&nbsp;<s class="otc">${item.originalPrice}</s></span><br>
+                <span>৳&nbsp;${item.discount_amount} &nbsp;&nbsp;<s class="otc">৳&nbsp;${item.price}</s></span><br>
 
             </div>
             <div onclick="addToCart('${item.id}')" class="cart-btn">
@@ -32,6 +32,7 @@
             
        
                     `;
+                   console.log("loded the mySQL server data");
                 container.appendChild(card);
             });
         })
