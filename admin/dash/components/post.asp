@@ -1,7 +1,3 @@
-
-
-
-
 <form id="uploadForm" enctype="multipart/form-data" method="post">
 
     <div class="elementx">
@@ -46,15 +42,24 @@
         <strong>Product Price and Discount</strong>
         <hr>
         <label for="productprice">Product Price Amount</label><br>
-        <input oninput="calculateDiscount()" class="input" type="number" name="product_price" id="productprice" placeholder="Product Price" required><br>
+        <input oninput="calculateDiscount()" class="input" type="number" name="product_price" id="productprice"
+            placeholder="Product Price" required><br>
 
         <label for="productdiscount">Product Discount %</label><br>
-        <input oninput="calculateDiscount()" class="input" type="number" name="product_discount" id="productdiscount" placeholder="Product Discount" required><br>
+        <input oninput="calculateDiscount()" class="input" type="number" name="product_discount" id="productdiscount"
+            placeholder="Product Discount" required><br>
 
         <label for="productdiscountamount">Product Discount Amount</label><br>
-        <input readonly class="input" type="number" id="productdiscountamount" name="product_discount_amount" placeholder="Discount Amount" required><br>
+        <input readonly class="input" type="number" id="productdiscountamount" name="product_discount_amount"
+            placeholder="Discount Amount" required><br>
+        <div class="flex beet">
+            <div></div>
+            <div></div>
+            <button class="subbtn" type="button" onclick="uploadToPHP()"> <i class="fa-solid fa-globe"></i>
+                Post</button>
+        </div>
+
     </div>
 
-    <button class="subbtn" type="button" onclick="uploadToPHP()"> <i class="fa-solid fa-globe"></i> Post</button>
-</form>
 
+</form>
