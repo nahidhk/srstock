@@ -60,7 +60,7 @@ body {
     }
 }
 
-.flex {
+.flex,.flexin {
     display: flex;
 }
 
@@ -207,6 +207,8 @@ body {
 
 .test {
     background-color: red;
+    border: 5px solid black;
+    box-shadow: 0 0 10px 0 #fff;
 }
 
 .test2 {
@@ -392,11 +394,68 @@ a {
     margin: 20px auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.showdwn{
+
+.showdwn {
     box-shadow: 0 0 5px 0 #585858;
     border-radius: 10px;
 }
+
+.wFill {
+    width: 50%;
+}
+.wFill h1,h3,p{
+    margin: 0;
+}
+.imgbox {
+    width: 100%;
+    height: 100%;
+    
+}
+.imgbox img{
+    height: 100%;
+    width: 100%;
+}
+.fullpage{
+    height: 80vh;
+}
+.rows{
+    flex-wrap: wrap;
+}
+.brid{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer; 
+}
+.brid img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+.btnio{
+    height: 30px;
+    width: 100px;
+    margin-left: 5px;
+    background-color: #00000000;
+    border: 1px solid #000;
+    border-radius: 1px;
+}
+.sbtn{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #000;
+    margin: 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 @media (max-width: 768px) {
+  
 
     .mw50,
     .mw30 {
@@ -442,5 +501,14 @@ a {
 
     .mvcc {
         display: none;
+    }
+    .mbrow2{
+       flex-direction: column; 
+    }
+    .wFill{
+        width: 100%;
+    }
+    .flexin{
+        display: block;
     }
 }

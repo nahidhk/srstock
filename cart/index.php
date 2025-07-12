@@ -31,14 +31,42 @@
 
     <section class="flex center">
         <div class="cart">
-              <div class="flex around">
-                <div class="card-img showdwn">
-                    <img loading="lazy" src="/src/img/exampule.png" alt="">
+           <div class="flexin mdrow2 center fullpage">
+           
+                <div class=" wFill">
+                    <div class="imgbox">
+                        <img src="/src/img/exampule.png" alt="">
+                    </div>
                 </div>
-                <div>
-                    <h1>box2</h1>
+                <div class=" wFill">
+                    <blockquote>
+                        <div class="flex rows">
+                            <div>
+                            <div class="brid">
+                                <img src="/src/img/exampule.png" alt="">
+                            </div>
+                            <button class="btnio">
+                                Type Color
+                            </button>
+                            </div>
+                             
+                        </div>
+                        <br>
+                        <h1>This is product text</h1>
+                        <h3>500 ৳ <span class="otc"><s><i>500 ৳</i></s></span></h3>
+                        <p><strong>This is product description</strong></p>
+                        <hr>
+                        <strong>Size:</strong>
+                        <div class="flex rows">
+                            <div class="sbtn">2XL</div>
+                             <div class="sbtn">XL</div>
+                              <div class="sbtn">L</div>
+                        </div>
+
+                    </blockquote>
                 </div>
-              </div>
+           
+           </div>
         </div>
     </section>
 
