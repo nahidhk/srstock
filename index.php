@@ -3,7 +3,8 @@
 
 <head>
     <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
-   
+    <meta name="description" content="SR Stock - Your one-stop shop for all your needs. Explore our wide range of products and enjoy seamless shopping experience.">
+    <meta name="keywords" content="SR Stock, online shopping, e-commerce, buy products">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Stock</title>
