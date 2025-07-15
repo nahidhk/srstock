@@ -1,3 +1,44 @@
+
+<?php
+// Database configuration
+$host = 'localhost';
+$dbUsername = 'root';
+$dbPassword = 'Nahid@!2345s$!';
+$dbName = 'srstock';
+
+// Create connection
+$mysqli = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+
+// Check connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+
+
+
+
+// Get product ID from URL
+$productId = isset($_GET['productId']) ? intval($_GET['productId']) : 0;
+
+// Query product
+$sql = "SELECT * FROM products WHERE id = $productId LIMIT 1";
+$result = $mysqli->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $product = $result->fetch_assoc();
+
+    // Decode JSON fields
+    $sizes = json_decode($product['sizes_json'], true)['size'];
+    $photos = json_decode($product['photos_json'], true);
+    $mainPhoto = $photos[0]['photo'];
+} else {
+    echo "<h2>Product not found!</h2>";
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
       
@@ -29,46 +70,80 @@
 
 
 
-    <section class="flex center">
-        <div class="cart">
-           <div class="flexin mdrow2 center fullpage">
-           
-                <div class=" wFill">
-                    <div class="imgbox">
-                        <img src="/src/img/exampule.png" alt="">
-                    </div>
-                </div>
-                <div class=" wFill">
-                    <blockquote>
-                        <div class="flex rows">
-                            <div>
-                            <div class="brid">
-                                <img src="/src/img/exampule.png" alt="">
-                            </div>
-                            <button class="btnio">
-                                Type Color
-                            </button>
-                            </div>
-                             
-                        </div>
-                        <br>
-                        <h1>This is product text</h1>
-                        <h3>500 ৳ <span class="otc"><s><i>500 ৳</i></s></span></h3>
-                        <p><strong>This is product description</strong></p>
-                        <hr>
-                        <strong>Size:</strong>
-                        <div class="flex rows">
-                            <div class="sbtn">2XL</div>
-                             <div class="sbtn">XL</div>
-                              <div class="sbtn">L</div>
-                        </div>
 
-                    </blockquote>
+<section class="flex center">
+    <div class="cart">
+       <div class="flexin mdrow2 center fullpage">
+
+            <!-- Left Image -->
+            <div class="wFill">
+                <div class="imgbox">
+                    <img src="/admin/dash/upload/uploads/<?= htmlspecialchars($mainPhoto) ?>" alt="">
                 </div>
-           
-           </div>
-        </div>
-    </section>
+            </div>
+
+            <!-- Right Details -->
+            <div class="wFill">
+                <blockquote>
+                    <div class="flex rows">
+                        <?php foreach ($photos as $photo): ?>
+                        <div>
+                             
+                            <!-- All color photos -->
+                            <div class="flex rows">
+                               
+                                    <div class="brid">
+                                        <img src="/admin/dash/upload/uploads/<?= htmlspecialchars($photo['photo']) ?>" alt="<?= htmlspecialchars($photo['color']) ?>">
+                                        
+                                    </div>
+                                
+                            </div>
+
+                            <button class="btnio"><?= htmlspecialchars($photo['color']) ?></button>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <br>
+                    <h1><?= htmlspecialchars($product['name']) ?></h1>
+                    <h3>
+                        <?= htmlspecialchars($product['price']) ?> ৳
+                        <span class="otc">
+                            <s><i><?= htmlspecialchars($product['discount_amount']) ?> ৳</i></s>
+                        </span>
+                    </h3>
+                    <p><strong><?= htmlspecialchars($product['description']) ?></strong></p>
+                    <hr>
+
+                    <strong>Size:</strong>
+                    <div class="flex rows">
+                        <?php foreach ($sizes as $size): ?>
+                            <div class="sbtn"><?= htmlspecialchars($size) ?></div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <br>
+                    <div class="flex beet">
+                        <div class="flex">
+                            <div class="flex cotix">
+                                <button onclick="qtyoption('decrease')" class="pbtn">-</button>
+                                <input id="qty" type="number" value="1" class="qty">
+                                <button onclick="qtyoption('increase')" class="pbtn">+</button>
+                            </div>
+                        </div>
+                        <div class="flex rows">
+                            <button class="buyBtn black-btn">Buy Now</button>
+                            <button class="buyBtn black-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+
+       </div>
+    </div>
+</section>
+
+
 
 
 
@@ -82,6 +157,7 @@
     <?php include '../components/footer.asp'; ?>
     <!-- js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="/src/js/cart.js"></script>
 <script>
   const timestamp = new Date().getTime();
 
