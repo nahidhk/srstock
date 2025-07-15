@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
     <meta name="description" content="SR Stock - Your one-stop shop for all your needs. Explore our wide range of products and enjoy seamless shopping experience.">
