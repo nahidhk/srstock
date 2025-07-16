@@ -17,17 +17,17 @@ if ($mysqli->connect_error) {
 
 
 
-// Get product ID from URL
+
 $productId = isset($_GET['productId']) ? intval($_GET['productId']) : 0;
 
-// Query product
+
 $sql = "SELECT * FROM products WHERE id = $productId LIMIT 1";
 $result = $mysqli->query($sql);
 
 if ($result && $result->num_rows > 0) {
     $product = $result->fetch_assoc();
 
-    // Decode JSON fields
+   
     $sizes = json_decode($product['sizes_json'], true)['size'];
     $photos = json_decode($product['photos_json'], true);
     $mainPhoto = $photos[0]['photo'];
@@ -66,8 +66,6 @@ if ($result && $result->num_rows > 0) {
 
 
  
-
-
 
 
 
