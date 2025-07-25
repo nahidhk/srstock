@@ -65,49 +65,67 @@
     <!-- install your sorce code  !!!! Remove the code is a api php rename index.html > index.php-->
 
 
-    
+
 
 
     <section class="flex center">
         <!-- mySql button -->
         <div class="min">
-           <img src="/admin/dash/svg/mysql.svg" alt="">
-           <strong>MySQL</strong>
+            <img src="/admin/dash/svg/mysql.svg" alt="">
+            <strong>MySQL</strong>
         </div>
-       <!-- **** mysql btn**** -->
+        <!-- **** mysql btn**** -->
 
         <!-- ads button -->
         <div class="min">
-           <img src="/admin/dash/svg/ads.svg" alt="">
-           <strong>Ad's</strong>
+            <img src="/admin/dash/svg/ads.svg" alt="">
+            <strong>Ad's</strong>
         </div>
-       <!-- **** ads btn**** -->
+        <!-- **** ads btn**** -->
 
-               <!-- ads button -->
+        <!-- Product Post button -->
         <div onclick="openpopup('postpopup')" class="min">
-           <img src="/admin/dash/svg/upload.svg" alt="">
-           <strong>Post</strong>
+            <img src="/admin/dash/svg/upload.svg" alt="">
+            <strong>Post</strong>
         </div>
-       <!-- **** ads btn**** --> 
-    </section> 
+        <!-- **** Product Post   btn**** -->
+
+        <!-- Post List button -->
+        <div onclick="openpopup('listPopup')" class="min">
+            <img src="/admin/dash/svg/list.svg" alt="">
+            <strong>Post List</strong>
+        </div>
+        <!-- **** post List btn**** -->
 
 
 
-<!-- post popup --> 
-    <div  id="postpopup" class="darkbox vcc">
+    </section>
+
+
+
+    <!-- post popup -->
+    <div id="postpopup" class="darkbox vcc">
         <div class="popup fill">
             <div class="underline flex beet">
-              <div></div>
-              <div>Post</div>
-              <div onclick="closepopup('postpopup')" class="closeBtn"><i class="fa-solid fa-x"></i></div>
+                <div></div>
+                <div>Post</div>
+                <div onclick="closepopup('postpopup')" class="closeBtn"><i class="fa-solid fa-x"></i></div>
             </div>
             <?php include 'components/post.asp'; ?>
         </div>
     </div>
-
-
-
-
+<!-- Post Popup******* -->
+ <!-- post list popup --> 
+   <div id="listPopup" class="darkbox vcc">
+       <div class="popup fill">
+           <div class="underline flex beet">
+               <div></div>
+               <div>Post List</div>
+               <div onclick="closepopup('listPopup')" class="closeBtn"><i class="fa-solid fa-x"></i></div>
+           </div>
+           <?php include 'components/list.asp'; ?>
+       </div>
+   </div>
 
     <!-- nosql -->
 
