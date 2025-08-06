@@ -32,7 +32,7 @@
         <button onclick="window.open('edit/?id=${item.id}')" title="Edit" class="iconBtn edit">
             <i class="fa-solid fa-pen-to-square"></i>
         </button>
-        <button onclick="window.open('delete/?id=${item.id}')" title="Delete" class="iconBtn e tash">
+        <button onclick="window.open('delete/?type=products&id=${item.id}')" title="Delete" class="iconBtn e tash">
             <i class="fa-solid fa-trash"></i>
         </button>
        
