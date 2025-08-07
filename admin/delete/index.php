@@ -8,15 +8,12 @@ $sql = "DELETE FROM $type WHERE id = $id";
 $mysqli->query($sql) === TRUE;
 
  $mysqli->close();
-
+ echo "Request completed successfully";
+ echo "<br>";
+echo $_GET['bk'];
 ?>
 <script>
-    const goback = confirm("Delete successful. Do you want to go back to the list?");
-    if (goback) {
-       window.location.href = '../dash/';
-    } else {
-         alert("You can continue with other operations.");
-         alert("Sorry server action failed. your data permanent deleted. but you can continue with go back show list this data . and this data not working");
-         window.history.back();
-    }
+   setTimeout(() => {
+       window.location.href = "<?php echo $_GET['bk']; ?>&popup=<?php echo $_GET['popup']; ?>";
+   }, 1000);
 </script>

@@ -46,3 +46,40 @@ fetch('/tools/data/srs_pp_code.json')
         // Simulate adding to cart
         window.location.href = `/cart/index.php?productId=${productId}`;
     }
+
+
+
+
+
+function zoomIn(element) {
+    const img = element.querySelector('img');
+    element.style.cursor = 'zoom-out';
+    
+    // Calculate zoom level based on image and container size
+    const zoomLevel = 2; // Adjust as needed (2 = 200% zoom)
+    
+    element.addEventListener('mousemove', function(e) {
+        // Get mouse position relative to the element
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate percentage position
+        const xPercent = (x / rect.width) * 100;
+        const yPercent = (y / rect.height) * 100;
+        
+        // Apply transform
+        img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+        img.style.transform = `scale(${zoomLevel})`;
+    });
+}
+
+function zoomOut(element) {
+    const img = element.querySelector('img');
+    img.style.transform = 'scale(1)';
+    img.style.transformOrigin = 'center center';
+    element.style.cursor = 'zoom-in';
+    
+    // Remove mousemove event listener to improve performance
+    element.replaceWith(element.cloneNode(true));
+}

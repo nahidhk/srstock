@@ -56,7 +56,17 @@ function addUploadPair(index) {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                upbox.innerHTML = `<img src="${e.target.result}" style="max-width:100px; max-height:100px; object-fit:cover; border:1px solid #ccc; border-radius:8px;">`;
+                upbox.innerHTML = `<img 
+  src="${e.target.result}" 
+  style="
+    width: 100px;      
+    height: 100px;      
+    object-fit: cover;   
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: block;    
+  "
+>`;
             };
 
             reader.readAsDataURL(file);

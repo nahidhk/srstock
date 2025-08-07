@@ -18,7 +18,7 @@
         <!-- card -->
       
             <div class="card-img">
-                <img loading="lazy" src="/admin/dash/upload/uploads/${item.photos_json[0].photo}" alt="${item.name}">
+                <img style="object-fit: cover; border: 1px solid #ccc; border-radius: 8px;" loading="lazy" src="/admin/dash/upload/uploads/${item.photos_json[0].photo}" alt="${item.name}">
             </div>
             <div class="padding-left">
                 <b>${item.name}</b> <br>

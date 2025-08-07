@@ -29,6 +29,7 @@ $stmt->bind_param(
 // ✅ Execute
 if ($stmt->execute()) {
     echo "['true']";
+    
 } else {
     echo "❌ Error: " . $stmt->error;
 }
@@ -36,3 +37,8 @@ if ($stmt->execute()) {
 $stmt->close();
 $mysqli->close();
 ?>
+<script>
+    setTimeout(() => {
+        window.location.href = "../dash?id=listPopup&popup=true";
+    }, 1000);
+</script>

@@ -1,4 +1,3 @@
-
 <?php
 // Database configuration
 $host = 'localhost';
@@ -41,10 +40,10 @@ if ($result && $result->num_rows > 0) {
 
 <!DOCTYPE html>
 <html lang="en">
-      
+
 <head>
     <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
-  
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Stock</title>
@@ -65,87 +64,89 @@ if ($result && $result->num_rows > 0) {
     <!-- That is a point of interest -->
 
 
- 
 
 
 
-<section class="flex center">
-    <div class="cart">
-       <div class="flexin mdrow2 center fullpage">
 
-            <!-- Left Image -->
-            <div class="wFill">
-                <div class="imgbox">
-                    <img src="/admin/dash/upload/uploads/<?= htmlspecialchars($mainPhoto) ?>" alt="">
+    <section class="flex center">
+        <div class="cart">
+            <div class="flexin mdrow2 center fullpage">
+
+                <!-- Left Image -->
+                <div class="wFill">
+                    <div class="imgbox" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+                        <img src="/admin/dash/upload/uploads/<?= htmlspecialchars($mainPhoto) ?>" alt="">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right Details -->
-            <div class="wFill">
-                <blockquote>
-                    <div class="flex rows">
-                        <?php foreach ($photos as $photo): ?>
-                        <div>
-                             
-                            <!-- All color photos -->
-                            <div class="flex rows">
-                               
-                                    <div class="brid">
-                                        <img src="/admin/dash/upload/uploads/<?= htmlspecialchars($photo['photo']) ?>" alt="<?= htmlspecialchars($photo['color']) ?>">
-                                        
-                                    </div>
-                                
-                            </div>
-
-                            <button class="btnio"><?= htmlspecialchars($photo['color']) ?></button>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <br>
-                    <h1><?= htmlspecialchars($product['name']) ?></h1>
-                    <h3>
-                        <?= htmlspecialchars($product['price']) ?> ৳
-                        <span class="otc">
-                            <s><i><?= htmlspecialchars($product['discount_amount']) ?> ৳</i></s>
-                        </span>
-                    </h3>
-                    <p><strong><?= htmlspecialchars($product['description']) ?></strong></p>
-                    <hr>
-
-                    <strong>Size:</strong>
-                    <div class="flex rows">
-                        <?php foreach ($sizes as $size): ?>
-                            <div class="sbtn"><?= htmlspecialchars($size) ?></div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <br>
-                    <div class="flex beet">
-                        <div class="flex">
-                            <div class="flex cotix">
-                                <button onclick="qtyoption('decrease')" class="pbtn">-</button>
-                                <input id="qty" type="number" value="1" class="qty">
-                                <button onclick="qtyoption('increase')" class="pbtn">+</button>
-                            </div>
-                        </div>
+                <!-- Right Details -->
+                <div class="wFill">
+                    <blockquote>
                         <div class="flex rows">
-                            <button class="buyBtn black-btn">Buy Now</button>
-                            <button class="buyBtn black-btn">Add to Cart</button>
+                            <?php foreach ($photos as $photo): ?>
+                            <div>
+
+                                <!-- All color photos -->
+                                <div class="flex rows">
+
+                                    <div class="brid">
+                                        <img style="max-width: 100px; max-height: 100px; object-fit: cover;  border-radius: 8px;"
+                                            src="/admin/dash/upload/uploads/<?= htmlspecialchars($photo['photo']) ?>"
+                                            alt="<?= htmlspecialchars($photo['color']) ?>">
+
+                                    </div>
+
+                                </div>
+
+                                <button class="btnio"><?= htmlspecialchars($photo['color']) ?></button>
+                            </div>
+                            <?php endforeach; ?>
                         </div>
-                    </div>
-                </blockquote>
+
+                        <br>
+                        <h1><?= htmlspecialchars($product['name']) ?></h1>
+                        <h3>
+                            <?= htmlspecialchars($product['price']) ?> ৳
+                            <span class="otc">
+                                <s><i><?= htmlspecialchars($product['discount_amount']) ?> ৳</i></s>
+                            </span>
+                        </h3>
+                        <p><strong><?= htmlspecialchars($product['description']) ?></strong></p>
+                        <hr>
+
+                        <strong>Size:</strong>
+                        <div class="flex rows">
+                            <?php foreach ($sizes as $size): ?>
+                            <div class="sbtn"><?= htmlspecialchars($size) ?></div>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <br>
+                        <div class="flex beet">
+                            <div class="flex">
+                                <div class="flex cotix">
+                                    <button onclick="qtyoption('decrease')" class="pbtn">-</button>
+                                    <input id="qty" type="number" value="1" class="qty">
+                                    <button onclick="qtyoption('increase')" class="pbtn">+</button>
+                                </div>
+                            </div>
+                            <div class="flex rows">
+                                <button class="buyBtn black-btn">Buy Now</button>
+                                <button class="buyBtn black-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+
             </div>
-
-       </div>
-    </div>
-</section>
+        </div>
+    </section>
 
 
 
 
 
-       
+
 
 
 
@@ -154,30 +155,21 @@ if ($result && $result->num_rows > 0) {
     <!-- Footer  -->
     <?php include '../components/footer.asp'; ?>
     <!-- js -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
     <script src="/src/js/cart.js"></script>
-<script>
-  const timestamp = new Date().getTime();
+    <script>
+    const timestamp = new Date().getTime();
 
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "/src/css/style.css?v=" + timestamp;
-  document.head.appendChild(link);
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "/src/css/style.css?v=" + timestamp;
+    document.head.appendChild(link);
 
-  const script = document.createElement("script");
-  script.src = "/src/js/main.js?v=" + timestamp;
-  document.body.appendChild(script);
-</script>
+    const script = document.createElement("script");
+    script.src = "/src/js/main.js?v=" + timestamp;
+    document.body.appendChild(script);
+    </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-

@@ -412,14 +412,24 @@ p {
 }
 
 .imgbox {
-    width: 100%;
-    height: 100%;
-
+    width: 100%;       
+    height: 100%;      
+    overflow: hidden;  
+    position: relative; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
 }
 
 .imgbox img {
-    height: 100%;
-    width: 100%;
+    width: 100%;      
+    height: 100%;      
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
+}
+
+
+.imgbox:hover img {
+    transform: scale(1.05);
 }
 
 .fullpage {
