@@ -29,7 +29,7 @@
         <button onclick="window.location.href='/cart/index.php?productId=${item.id}#'" title="Preview" class="iconBtn f view">
             <i class="fa-solid fa-eye"></i>
         </button>
-        <button onclick="window.open('edit/?id=${item.id}')" title="Edit" class="iconBtn edit">
+        <button onclick="window.location.href='/admin/dash/edit/?id=${item.id}'" title="Edit" class="iconBtn edit">
             <i class="fa-solid fa-pen-to-square"></i>
         </button>
         <button onclick="window.location.href='delete/?type=products&id=${item.id}&bk=/admin/dash?id=listPopup&popup=true'" title="Delete" class="iconBtn e tash">
