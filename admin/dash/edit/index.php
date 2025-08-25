@@ -27,7 +27,7 @@ $data = $q->fetch_assoc();
     }
 pre{
     font-family: monospace;
-    white-space: pre-wrap;
+    white-space: pre-wrap; 
     word-break: break-all;
     padding: 10px;
     background-color: #ffffffff;
@@ -52,27 +52,32 @@ input , textarea {
 </style>
 <body>
     <pre>
+        <form action="edit.php?id=<?= $data['id'] ?>" method="post">
    [
 {
-"id": "15",
-"name": "<input type='text' value='<?= $data['name'] ?>'>",
-"description": "<input type='text' value='<?= $data['description'] ?>'>",
+"id": "<?= $data['id'] ?>",
+"name": "<input name='name' type='text' value='<?= $data['name'] ?>'>",
+"description": "<input name='description' type='text' value='<?= $data['description'] ?>'>",
 "sizes_json": 
- <textarea><?php echo $data['sizes_json'] ?></textarea>
+ <textarea name='sizes_json'><?php echo $data['sizes_json'] ?></textarea>
 ,
-"price": "<input type='text' value='<?= $data['price'] ?>'>",
-"discount": "<input type='text' value='<?= $data['discount'] ?>%'>",
-"discount_amount": "<input type='text' value='<?= $data['discount_amount'] ?>'>",
-"photos_json": <textarea rows="4" cols="50"><?php echo $data['photos_json'] ?></textarea>,
-"created_at": "2025-08-08 12:02:08"
+"price": "<input oninput="calculateDiscount()"  id="productprice" name='price' type='text' value='<?= $data['price'] ?>'>",
+"discount": "<input oninput="calculateDiscount()"  id="productdiscount" name='discount' type='text' value='<?= $data['discount'] ?>'>%",
+"discount_amount": "<input readonly id="productdiscountamount" name='discount_amount' type='text' value='<?= $data['discount_amount'] ?>'>",
+"photos_json": <textarea name='photos_json' rows="4" cols="50"><?php echo $data['photos_json'] ?></textarea>,
+"created_at": "<?= $data['created_at'] ?>",
+"updated_at": "<?= $data['updated_at'] ?>",
 }
 ]
-
+<button style="margin: 20px auto; display: block; cursor: pointer; height: 40px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;" type="submit">Save Changes</button>
+</form>
 </pre>
 
 
 
+
     <script src="/admin/src/js/login.js"></script>
+    <script src="/admin/src/js/post.js"></script>
    
 </body>
 

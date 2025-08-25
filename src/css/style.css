@@ -462,7 +462,8 @@ p {
     margin-left: 5px;
     background-color: #00000000;
     border: 1px solid #000;
-    border-radius: 1px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .sbtn {
@@ -514,6 +515,10 @@ p {
     font-size: 1.2rem;
     border: none;
     outline: none;
+}
+.active {
+    background-color: #4680ff;
+    color: #fff;
 }
 
 @media (max-width: 768px) {
